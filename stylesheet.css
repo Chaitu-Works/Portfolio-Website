@@ -56,18 +56,59 @@ body {
 .home {
     position: relative;
     width: 100%;
-    justify-content: space-between;
     height: 100vh;
-    background: url(bg.jpg) no-repeat;
+    background: radial-gradient(at top left, #051129, #081b29);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 70px 10% 0;
+    overflow: hidden;
+}
+.home-img {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+   background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.home-img img {
+  width: 500px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: none;
+  object-fit: cover;
+  background: none;
+  backdrop-filter: none;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: #00f0ff;
+    opacity: 0.08;
+    filter: blur(150px);
+    z-index: 0;
 }
 
 .home-content {
     max-width: 600px;
+    position: relative;
+    z-index: 1;
 }
 
 .home-content h3 {
