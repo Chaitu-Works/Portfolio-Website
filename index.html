@@ -22,11 +22,12 @@
         <a href="#" class="logo">Portfolio</a>
 
         <nav class="navbar">
-            <a href="#home" style="--i:1"class="active">Home</a>
+            <a href="#home" style="--i:1" class="active">Home</a>
             <a href="#about" style="--i:2">About</a>
-            <a href="#services" style="--i:3">Skills</a>
-            <a href="#skills" style="--i:4">Portfolio</a>
-            <a href="#contact" style="--i:5">Contact</a>
+            <a href="#services" style="--i:3">Services</a>
+            <a href="#skills" style="--i:4">Skills</a>
+            <a href="#portfolio" style="--i:5">Portfolio</a>
+            <a href="#contact" style="--i:6">Contact</a>
         </nav>
     </header>
    <section class="home" id="home">
@@ -38,9 +39,9 @@
       <p>“A passionate Full Stack Developer & UI/UX enthusiast crafting clean, functional, and engaging digital experiences.<br>I blend code with creativity to bring ideas to life on the web.”</p>
 
       <div class="home-sci">
-        <a href="#" style="--i:6"><i class='bx bxl-facebook'></i></a>
-        <a href="#" style="--i:7"><i class='bx bxl-instagram'></i></a>
-        <a href="#" style="--i:8"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank" style="--i:6"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/AlluChaitanya" target="_blank" style="--i:7"><i class='bx bxl-github'></i></a>
+        <a href="https://twitter.com/your-handle" target="_blank" style="--i:8"><i class='bx bxl-twitter'></i></a>
       </div>
 
       <a href="#" class="btn-box">More About Me</a>
@@ -130,7 +131,7 @@
                     <div class="info">
                         <span>React</span>
                     </div>
-                    <div class="progress-line Python">
+                    <div class="progress-line React">
                         <span></span>
                     </div>
                 </div>
@@ -138,7 +139,7 @@
                     <div class="info">
                         <span>Python</span>
                     </div>
-                    <div class="progress-line React">
+                    <div class="progress-line Python">
                         <span></span>
                     </div>
                 </div>
@@ -146,7 +147,7 @@
                     <div class="info">
                         <span>Java</span>
                     </div>
-                    <div class="progress-line Python">
+                    <div class="progress-line Java">
                         <span></span>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
                     <div class="info">
                         <span>Git & GitHub</span>
                     </div>
-                    <div class="progress-line Python">
+                    <div class="progress-line Git">
                         <span></span>
                     </div>
                 </div>
@@ -232,7 +233,10 @@
       <!-- Project 3 -->
       <div class="project-card">
         <div class="image-wrapper">
-        <img src="project3.png" alt="Upcoming Project">
+        <div class="placeholder-image">
+          <i class='bx bx-code-alt' style="font-size: 80px; color: #0ef;"></i>
+          <p>Coming Soon</p>
+        </div>
         </div>
         <div class="layer">
           <h5>Coming Soon...</h5>
@@ -259,10 +263,10 @@
             </div>
             <div class="contact-actions">
             <div class="contact-icons">
-            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-             <a href="#"><i class='bx bxl-twitter'></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/AlluChaitanya" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://twitter.com/your-handle" target="_blank"><i class='bx bxl-twitter'></i></a>
+            <a href="mailto:chaiallu2025@gmail.com"><i class='bx bxl-gmail'></i></a>
             </div>
             <a href="Chaitanya_Allu_JavaFullStack.pdf" download class="btn-box">Download Resume</a>
         </div>
@@ -270,7 +274,7 @@
     </div>
 
     <div class="contact-form">
-        <form action="https://formspree.io/f/xqababnp" method="POST">
+        <form id="contact-form">
     <input type="text" name="name" placeholder="Enter your Name" required>
     <input type="email" name="email" placeholder="Enter your email" required>
     <input type="text" name="subject" placeholder="Enter your subject">

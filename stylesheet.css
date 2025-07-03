@@ -890,3 +890,122 @@ section{
         opacity: 1;
     }
 }
+
+/* Notification System */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideInRight 0.3s ease;
+    max-width: 400px;
+}
+
+.notification-success {
+    background: #10b981;
+    border-left: 4px solid #059669;
+}
+
+.notification-error {
+    background: #ef4444;
+    border-left: 4px solid #dc2626;
+}
+
+.notification-info {
+    background: #3b82f6;
+    border-left: 4px solid #2563eb;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.notification button:hover {
+    opacity: 0.8;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Placeholder Image */
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0e2230 0%, #1a3a4a 100%);
+    color: #0ef;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.placeholder-image p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Active Navigation State */
+.navbar a.active {
+    color: #0ef;
+    text-shadow: 0 0 10px #0ef;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+    
+    .home-content h1 {
+        font-size: 40px;
+    }
+    
+    .home-content h3 {
+        font-size: 24px;
+    }
+    
+    .home-img img {
+        width: 300px;
+    }
+    
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
