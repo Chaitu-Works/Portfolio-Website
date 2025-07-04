@@ -1,3 +1,30 @@
+// Dark Mode Toggle Functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+body.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    if (theme === 'light') {
+        themeIcon.className = 'bx bx-sun';
+    } else {
+        themeIcon.className = 'bx bx-moon';
+    }
+}
+
 // Typing animation
 var typed = new Typed(".text", {
     strings: ["Frontend Developer", "UI/UX Designer", "Web Developer"],
@@ -130,3 +157,102 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Skill Bar Animations with Intersection Observer
+const skillBars = document.querySelectorAll('.progress-line span');
+const radialBars = document.querySelectorAll('.path');
+
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'animate 1s ease-in-out forwards';
+        }
+    });
+}, observerOptions);
+
+skillBars.forEach(bar => {
+    skillObserver.observe(bar);
+});
+
+radialBars.forEach(bar => {
+    skillObserver.observe(bar);
+});
+
+// Enhanced Back-to-Top Button
+const backToTopBtn = document.querySelector('.top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'block';
+        backToTopBtn.style.opacity = '1';
+    } else {
+        backToTopBtn.style.opacity = '0';
+        setTimeout(() => {
+            if (window.pageYOffset <= 300) {
+                backToTopBtn.style.display = 'none';
+            }
+        }, 300);
+    }
+});
+
+backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Loading Screen
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 1000);
+});
+
+// Project Filter Functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filterValue = btn.getAttribute('data-filter');
+        
+        projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                card.style.display = 'block';
+                card.style.animation = 'slideTop 0.5s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Animate circular progress bars in Professional Strengths
+function animateCircleProgress() {
+  document.querySelectorAll('.circle-progress').forEach(circle => {
+    const percent = parseInt(circle.getAttribute('data-percent'), 10);
+    const progress = circle.querySelector('.progress');
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (percent / 100) * circumference;
+    progress.style.strokeDasharray = `${circumference}`;
+    progress.style.strokeDashoffset = `${circumference}`;
+    setTimeout(() => {
+      progress.style.strokeDashoffset = offset;
+    }, 300);
+  });
+}
+window.addEventListener('DOMContentLoaded', animateCircleProgress);
